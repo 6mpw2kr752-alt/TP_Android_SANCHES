@@ -19,6 +19,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:onClick="dessin"
         android:text="@string/button"
         tools:ignore="VisualLintButtonSize" />
 
