@@ -5,11 +5,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textVie"
         android:layout_width="196dp"
         android:layout_height="125dp"
         android:text="Gestionnair2 page"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="260dp" />
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="360dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public void dessin(View view) {
         TextView editText = (TextView) findViewById(R.id.monTexte);
         editText.setText("YES !!!");
-        setContentView(R.layout.gestionaire2);
+
     }
 }
