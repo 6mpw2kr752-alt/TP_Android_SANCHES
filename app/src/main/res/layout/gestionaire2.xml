@@ -9,7 +9,7 @@
         android:layout_width="196dp"
         android:layout_height="125dp"
         android:text="Gestionnair2 page"
-        tools:ignore="MissingConstraints"
+        tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteX="118dp"
         tools:layout_editor_absoluteY="360dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
