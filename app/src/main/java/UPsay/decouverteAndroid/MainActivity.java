@@ -2,6 +2,7 @@ package UPsay.decouverteAndroid;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,5 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public void dessin(View view) {
         TextView editText = (TextView) findViewById(R.id.monTexte);
         editText.setText("YES !!!");
+        setContentView(R.layout.gestionaire2);
     }
 }
