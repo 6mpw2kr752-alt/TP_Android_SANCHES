@@ -16,6 +16,7 @@ public class dessin_b extends View {
         super(context, attrs);
     }
     Bitmap b = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.emoji), 20, 0, 50, 65);
+
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
