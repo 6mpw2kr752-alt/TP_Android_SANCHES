@@ -1,5 +1,7 @@
 package UPsay.decouverteAndroid;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -13,7 +15,7 @@ public class dessin_b extends View {
     public dessin_b(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
-
+    Bitmap b = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.emoji), 20, 0, 50, 65);
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
@@ -35,5 +37,8 @@ du
 View */
         String texte = "Bonjour MONDE";
         canvas.drawText(texte, getWidth()/2, getHeight()/2, p);
+
+        canvas.drawBitmap(b, 200,200,p);
+
     }
 }
