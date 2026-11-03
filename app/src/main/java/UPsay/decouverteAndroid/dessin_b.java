@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 
 public class dessin_b extends View {
     float xText, yText;
+    float x1, x2, y1, y2;
     Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.emoji);
 
     Handler timerHandler = new Handler();
@@ -26,11 +28,50 @@ public class dessin_b extends View {
         }
     };
 
-    public dessin_b(Context context, @Nullable AttributeSet attrs) {
+    public dessin_b(Context context, AttributeSet attrs) {
         super(context, attrs);
         b = Bitmap.createBitmap(b, 0, 0, b.getWidth(), b.getHeight());
         setXYText(600, 600);
         timerHandler.postDelayed(updateTimerThread, 10);
+
+        OnTouchListener onTouchListener = new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event){
+                float dx, dy;
+                String direction;
+                switch(event.getAction()) {
+                    case(MotionEvent.ACTION_DOWN):
+                        x1 = event.getX();
+                        y1 = event.getY();
+                        Log.i("pacman", "appuyé");
+                        break;
+                    case(MotionEvent.ACTION_UP): {
+                        x2 = event.getX();
+                        y2 = event.getY();
+                        dx = x2-x1;
+                        dy = y2-y1;
+// Use dx and dy to determine the direction of the move
+                        if(Math.abs(dx) > Math.abs(dy)) {
+                            if(dx>0)
+                                direction = "right";
+                            else
+                                direction = "left";
+                        } else {
+                            if(dy>0)
+                                direction = "down";
+                            else
+                                direction = "up";
+                        }
+                        Log.i("pacman", "laché " + direction);
+                        Log.i("pacman", "dx = " + dx +"; dy = " + dy);
+                        break;
+                    }
+                }
+                invalidate();
+                return true;
+            }
+        };
+        setOnTouchListener(onTouchListener);
     }
 
     public void setXYText(float x, float y) {
@@ -64,11 +105,6 @@ public class dessin_b extends View {
                 Toast.LENGTH_SHORT).show();
 
     }
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        xText = event.getX();
-        yText = event.getY();
-        invalidate();
-        return false;
-    }
+
+
 }
