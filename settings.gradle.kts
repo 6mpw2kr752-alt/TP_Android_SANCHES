@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TP_Android_SANCHES"
 include(":app")
- 
+include(":myapplication_avancee")

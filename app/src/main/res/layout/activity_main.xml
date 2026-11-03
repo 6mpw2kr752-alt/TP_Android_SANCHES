@@ -30,6 +30,7 @@
             android:layout_width="213dp"
             android:layout_height="37dp"
             android:text="Hello World!"
+            android:textColor="#B63232"
             tools:ignore="TextSizeCheck,TextSizeCheck" />
 
         <Button
